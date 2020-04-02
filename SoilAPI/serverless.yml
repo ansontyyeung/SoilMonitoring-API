@@ -1,0 +1,68 @@
+service: soil-api
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  environment:
+    DYNAMODB_TABLE: "sensor_data_db"
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:331634860378:table/sensor_data_db"
+
+functions:
+  create:
+    handler: api/create.create
+    events:
+      - http:
+          path: registerState
+          method: post
+          cors: true
+
+  list:
+    handler: api/list.list
+    events:
+      - http:
+          path: listStates
+          method: get
+          cors: true
+
+  latest:
+    handler: api/latest.latest
+    events:
+      - http:
+          path: latest
+          method: get
+          cors: true
+
+  # get:
+  #   handler: api/get.get
+  #   events:
+  #     - http:
+  #         path: api/{id}
+  #         method: get
+  #         cors: true
+
+  # update:
+  #   handler: api/update.update
+  #   events:
+  #     - http:
+  #         path: api/{id}
+  #         method: put
+  #         cors: true
+
+  # delete:
+  #   handler: api/delete.delete
+  #   events:
+  #     - http:
+  #         path: api/{id}
+  #         method: delete
+  #         cors: true
