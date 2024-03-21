@@ -9,10 +9,6 @@ Functions:
 
 =================================================================
 
-项目示范 Project Demonstration: https://youtu.be/06MW89oNJlY
+Project Demonstration: https://youtu.be/06MW89oNJlY
 
-项目介绍 Project Presentation: https://youtu.be/UO5W-vqJygI
-
-百度网盘 (项目示范+项目介绍) 链接: https://pan.baidu.com/s/1Byx0ETbsiHTEvjv5IHYYxw 提取码: c2rg
-
-Created by YEUNG Tung Yan.
+Project Presentation: https://youtu.be/UO5W-vqJygI
